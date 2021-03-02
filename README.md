@@ -2,6 +2,8 @@
 
 > a stylish markdown-like DrawText function for Raylib!
 
+![Example](raylib_is_coool.gif)
+
 ## Usage
 
 You can use basic markdown syntax to style your text :
