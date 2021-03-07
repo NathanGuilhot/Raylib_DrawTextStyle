@@ -1,8 +1,9 @@
-::@echo off
+@echo off
 :: .
 :: .
 
-taskkill /im VNES_PC.exe /F 
+rem okistuff/butter dog, what is VNES_PC and why does it need to be killed?
+taskkill /im VNES_PC.exe /F
 
 :: > Setup required Environment
 :: -------------------------------------

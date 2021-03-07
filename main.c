@@ -40,8 +40,8 @@ int main(void)
     // Main game loop
     while (!WindowShouldClose())
     {
-        //Update the timer by adding the delta time
-        timer += GetFrameTime();
+        //Update the timer
+        UpdateTimer();
 
         // Draw
         //----------------------------------------------------------------------------------
