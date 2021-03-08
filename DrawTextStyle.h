@@ -13,14 +13,29 @@ __underline__
 
 + user defined line spacing
 */
+
+// okistuff/butter dog - because we are now including a few things. lets pragma once
+#pragma once
+
+// okistuff/butter dog - Include Raylib and math.h
+#include "raylib.h"
+#include <math.h>
+
+
+// add Timer here
+float timer;
+
+// implemented in the bottom
+void UpdateTimer();
+
 void DrawTextStyleEx(Font main_font, Font italic_font, Font bold_font, Font bolditalic_font, const char *text, Vector2 position, float fontSize, float spacing, float linespacing, float time, Color color);
 
 
 //It is really recommended to use a wrapper function like this :
 void DrawTextStyle(const char* text, float posx, float posy, int fontsize, Color color)
 {
-    //Exemple:
-    DrawTextStyleEx(my_main_font, my_italic_font, my_bold_font, my_bolditalic_font, 
+    //Example:
+    DrawTextStyleEx(my_main_font, my_italic_font, my_bold_font, my_bolditalic_font,
                     text, (Vector2){posx, posy}, fontsize,
                     1, 1.1, timer, color);
 }
@@ -37,7 +52,7 @@ void DrawTextStyleEx(Font main_font, Font italic_font, Font bold_font, Font bold
     int textOffsetY = 0;            // Offset between lines (on line break '\n')
     float textOffsetX = 0.0f;       // Offset X to next character to draw
 
-    
+
     float scaleFactor = fontSize/font.baseSize;     // Character quad scaling factor
 
     //Style flags
@@ -147,6 +162,11 @@ void DrawTextStyleEx(Font main_font, Font italic_font, Font bold_font, Font bold
         }
 
         i += codepointByteCount;   // Move text bytes counter to next codepoint
-        
+
     }
+}
+
+void UpdateTimer()
+{
+  timer += GetFrameTime();
 }
